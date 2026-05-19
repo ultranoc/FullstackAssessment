@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem -Recurse -File \"c:\\\\Files\\\\FullstackAssessment\" | Where-Object { $_.FullName -notmatch 'node_modules|\\\\.git|obj|bin' } | Select-Object @{N='Path';E={$_.FullName.Replace\\('c:\\\\Files\\\\FullstackAssessment\\\\', ''\\)}} | Sort-Object Path | Format-Table -AutoSize)",
+      "mcp__postgres__query",
+      "PowerShell(dotnet tool install --global dotnet-ef 2>&1)",
+      "PowerShell(dotnet sln \"c:\\\\Files\\\\FullstackAssessment\\\\FullstackAssessment.sln\" add \"c:\\\\Files\\\\FullstackAssessment\\\\Store.Scraper\\\\Store.Scraper.csproj\")",
+      "PowerShell(dotnet build \"c:\\\\Files\\\\FullstackAssessment\\\\Store.Scraper\\\\Store.Scraper.csproj\" 2>&1)",
+      "Bash(Get-ChildItem \"c:\\\\Files\\\\FullstackAssessment\\\\Scraper\\\\Store.Scraper\" -Recurse -File)",
+      "Bash(Select-Object FullName)"
+    ]
+  }
+}
